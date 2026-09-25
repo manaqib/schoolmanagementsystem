@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
@@ -17,15 +17,31 @@ import { students } from './data/students'
 import './App.css'
 
 const defaultLogin = { username: 'admin', password: 'admin123' }
+const AUTH_STORAGE_KEY = 'schoolAuthSession'
 
 const AppContent = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    if (typeof window === 'undefined') return false
+
+    try {
+      const storedSession = window.localStorage.getItem(AUTH_STORAGE_KEY)
+      return storedSession ? JSON.parse(storedSession).isLoggedIn === true : false
+    } catch {
+      return false
+    }
+  })
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [selectedSection, setSelectedSection] = useState('Dashboard')
   const [loginForm, setLoginForm] = useState({ username: '', password: '' })
   const [selectedStudent, setSelectedStudent] = useState(students[0])
   const [notificationsOpen, setNotificationsOpen] = useState(false)
   const [profileMenuOpen, setProfileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    window.localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify({ isLoggedIn }))
+  }, [isLoggedIn])
 
   const user = { name: 'Admin User' }
   const notifications = [
@@ -51,6 +67,10 @@ const AppContent = () => {
     setLoginForm({ username: '', password: '' })
     setNotificationsOpen(false)
     setProfileMenuOpen(false)
+
+    if (typeof window !== 'undefined') {
+      window.localStorage.removeItem(AUTH_STORAGE_KEY)
+    }
   }
 
   const handleViewStudent = (student) => {
