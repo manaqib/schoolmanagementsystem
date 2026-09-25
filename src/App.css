@@ -653,6 +653,7 @@ th {
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+  min-width: 48%;
 }
 
 .fee-header {
