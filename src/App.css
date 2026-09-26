@@ -4,7 +4,7 @@
   --bg-soft: #f8fafc;
   --gold: #facc15;
   --gold-strong: #f59e0b;
-  --gold-soft: #fef3c7;
+  --gold-soft: #475569;
   --text: #111827;
   --text-muted: #475569;
   --text-white: #ffffff;
@@ -433,7 +433,7 @@ th {
   font-weight: 600;
 }
 
-.status-badge.success { background: rgba(250, 204, 21, 0.18); color: #fef3c7; }
+.status-badge.success { background: rgba(250, 204, 21, 0.18); color: #3b3b3b; }
 .status-badge.warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
 .status-badge.danger { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
 .status-badge.default { background: rgba(255, 255, 255, 0.1); color: #e5e7eb; }
