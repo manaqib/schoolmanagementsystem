@@ -1,7 +1,21 @@
+:root {
+  --bg-page: #ffffff;
+  --bg-panel: #ffffff;
+  --bg-soft: #f8fafc;
+  --gold: #facc15;
+  --gold-strong: #f59e0b;
+  --gold-soft: #fef3c7;
+  --text: #111827;
+  --text-muted: #475569;
+  --text-white: #ffffff;
+  --line: rgba(15, 23, 42, 0.08);
+  --shadow: rgba(15, 23, 42, 0.08);
+}
+
 .app-shell {
   min-height: 100vh;
-  background: linear-gradient(135deg, #eef5ff 0%, #f7f9fc 100%);
-  color: #1f2937;
+  background: var(--bg-page);
+  color: var(--text);
 }
 
 .top-header {
@@ -9,9 +23,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 18px 24px;
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .header-left,
@@ -30,19 +44,19 @@
   right: 0;
   top: calc(100% + 12px);
   width: 280px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
   z-index: 30;
   overflow: hidden;
 }
 
 .dropdown-header {
   padding: 14px 16px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--line);
   font-weight: 700;
-  color: #0f172a;
+  color: #111111;
 }
 
 .notification-item {
@@ -56,32 +70,32 @@
 
 .notification-item strong {
   display: block;
-  color: #0f172a;
+  color: var(--text);
   font-size: 0.9rem;
 }
 
 .notification-item p {
   margin: 4px 0 0;
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .notification-item span {
   font-size: 0.7rem;
-  color: #64748b;
+  color: #a16207;
 }
 
 .notification-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #3b82f6;
+  background: var(--gold);
   margin-top: 6px;
 }
 
 .dropdown-empty {
   padding: 18px 16px;
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.85rem;
 }
 
@@ -99,7 +113,7 @@
 
 .profile-menu-header small {
   display: block;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .profile-item {
@@ -108,25 +122,25 @@
   background: transparent;
   text-align: left;
   padding: 12px 16px;
-  color: #334155;
+  color: var(--text);
   font-weight: 600;
   cursor: pointer;
 }
 
 .profile-item:hover {
-  background: #f8fafc;
+  background: rgba(250, 204, 21, 0.08);
 }
 
 .profile-item.danger {
-  color: #b91c1c;
+  color: #fca5a5;
 }
 
 .logo-box {
   width: 36px;
   height: 36px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #2f6fed, #5aa9ff);
-  color: white;
+  background: linear-gradient(135deg, var(--gold-strong), var(--gold));
+  color: #111111;
   display: grid;
   place-items: center;
   font-weight: 700;
@@ -143,29 +157,30 @@
 .brand-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #111111;
 }
 
 .user-pill {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #eef4ff;
+  background: rgba(250, 204, 21, 0.12);
   border-radius: 999px;
   padding: 8px 12px;
   font-size: 0.9rem;
-  color: #1d4ed8;
+  color: #111111;
 }
 
 .user-avatar {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #dbeafe;
+  background: rgba(250, 204, 21, 0.2);
   display: grid;
   place-items: center;
   font-size: 0.75rem;
   font-weight: 700;
+  color: var(--gold);
 }
 
 .user-avatar.large {
@@ -193,17 +208,17 @@
 .sidebar-toggle {
   width: 38px;
   height: 38px;
-  background: #f3f4f6;
-  color: #374151;
+  background: rgba(250, 204, 21, 0.14);
+  color: #111111;
 }
 
 .primary-btn,
 .login-btn,
 .logout-btn {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
+  background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+  color: #111111;
   padding: 10px 16px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .primary-btn.wide {
@@ -217,8 +232,8 @@
 
 .sidebar {
   width: 260px;
-  background: #0f172a;
-  color: white;
+  background: #ffffff;
+  color: var(--text);
   padding: 20px 14px;
   transition: transform 0.25s ease;
 }
@@ -240,7 +255,7 @@
   width: 100%;
   text-align: left;
   background: transparent;
-  color: #dbeafe;
+  color: #111111;
   padding: 12px 14px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -248,8 +263,8 @@
 
 .nav-item.active,
 .nav-item:hover {
-  background: #1d4ed8;
-  color: white;
+  background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+  color: #111111;
 }
 
 .content-area {
@@ -277,7 +292,7 @@
 .page-header h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #0f172a;
+  color: #111111;
 }
 
 .stats-grid {
@@ -287,12 +302,12 @@
 }
 
 .compact-grid {
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
 }
 
 .stat-card {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
   display: flex;
@@ -301,11 +316,11 @@
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
 }
 
-.stat-card.primary { border-left: 5px solid #2563eb; }
-.stat-card.secondary { border-left: 5px solid #14b8a6; }
-.stat-card.success { border-left: 5px solid #22c55e; }
+.stat-card.primary { border-left: 5px solid var(--gold); }
+.stat-card.secondary { border-left: 5px solid #fbbf24; }
+.stat-card.success { border-left: 5px solid #facc15; }
 .stat-card.warning { border-left: 5px solid #f59e0b; }
-.stat-card.danger { border-left: 5px solid #ef4444; }
+.stat-card.danger { border-left: 5px solid #f87171; }
 
 .stat-icon {
   width: 52px;
@@ -313,13 +328,14 @@
   border-radius: 14px;
   display: grid;
   place-items: center;
-  background: #eff6ff;
+  background: rgba(250, 204, 21, 0.12);
   font-size: 1.6rem;
+  color: #111111;
 }
 
 .stat-title {
   margin: 0 0 6px;
-  color: #64748b;
+  color: #a16207;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -328,11 +344,11 @@
 .stat-card h3 {
   margin: 0 0 6px;
   font-size: 2rem;
-  color: #111827;
+  color: var(--text);
 }
 
 .stat-card small {
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .two-col-layout {
@@ -342,8 +358,8 @@
 }
 
 .panel {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
@@ -353,7 +369,7 @@
 .student-details h3,
 .modal-header h3 {
   margin: 0 0 12px;
-  color: #111827;
+  color: #111111;
 }
 
 .table-wrap {
@@ -374,8 +390,8 @@ td {
 }
 
 th {
-  background: #f8fafc;
-  color: #475569;
+  background: rgba(250, 204, 21, 0.08);
+  color: var(--gold);
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -396,7 +412,8 @@ th {
 
 .small-btn.primary,
 .filter-btn.active {
-  background: #2563eb;
+  background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+  color: #111111;
 }
 
 .small-btn.secondary {
@@ -416,10 +433,10 @@ th {
   font-weight: 600;
 }
 
-.status-badge.success { background: #dcfce7; color: #166534; }
-.status-badge.warning { background: #fef3c7; color: #92400e; }
-.status-badge.danger { background: #fee2e2; color: #991b1b; }
-.status-badge.default { background: #e2e8f0; color: #334155; }
+.status-badge.success { background: rgba(250, 204, 21, 0.18); color: #fef3c7; }
+.status-badge.warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.status-badge.danger { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+.status-badge.default { background: rgba(255, 255, 255, 0.1); color: #e5e7eb; }
 
 .toolbar,
 .filter-row {
@@ -435,8 +452,8 @@ th {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
-  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 12px;
   padding: 10px 12px;
 }
@@ -450,11 +467,12 @@ th {
 .filter-row select,
 .login-form input {
   width: 100%;
-  border: 1px solid #dfe7f1;
+  border: 1px solid var(--line);
   border-radius: 10px;
   padding: 11px 12px;
   font: inherit;
-  background: #fff;
+  background: #ffffff;
+  color: var(--text);
   box-sizing: border-box;
 }
 
@@ -469,19 +487,19 @@ th {
 }
 
 .filter-btn {
-  background: #f1f5f9;
-  color: #334155;
+  background: rgba(250, 204, 21, 0.1);
+  color: var(--gold);
   padding: 9px 12px;
   font-weight: 600;
 }
 
 .empty-state {
-  background: #f8fafc;
-  border: 1px dashed #cbd5e1;
+  background: rgba(250, 204, 21, 0.04);
+  border: 1px dashed rgba(250, 204, 21, 0.45);
   border-radius: 12px;
   padding: 28px;
   text-align: center;
-  color: #475569;
+  color: var(--text-muted);
 }
 
 .student-card-large {
@@ -535,8 +553,8 @@ th {
 }
 
 .pill-list li {
-  background: #e0f2fe;
-  color: #075985;
+  background: rgba(250, 204, 21, 0.12);
+  color: var(--gold-soft);
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 0.8rem;
@@ -558,8 +576,8 @@ th {
 
 .leave-form,
 .login-card {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
 }
@@ -575,7 +593,7 @@ th {
   flex-direction: column;
   gap: 6px;
   font-weight: 600;
-  color: #334155;
+  color: var(--text-muted);
 }
 
 .form-grid {
@@ -587,7 +605,7 @@ th {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at top, #dbeafe 0%, #f8fafc 42%, #eef2ff 100%);
+  background: linear-gradient(135deg, #fffef5 0%, #ffffff 100%);
   padding: 20px;
 }
 
@@ -602,7 +620,7 @@ th {
 
 .login-brand h2 {
   margin: 0;
-  color: #0f172a;
+  color: #111111;
 }
 
 .modal-overlay {
@@ -616,10 +634,11 @@ th {
 
 .modal-card {
   width: min(520px, 100%);
-  background: white;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
 .modal-header {
@@ -631,12 +650,13 @@ th {
 .close-btn {
   width: 34px;
   height: 34px;
-  background: #f3f4f6;
+  background: rgba(250, 204, 21, 0.12);
+  color: #111111;
   font-size: 1.5rem;
 }
 
 .upcoming-row {
-  background: #fff7ed;
+  background: rgba(250, 204, 21, 0.06);
 }
 
 .fee-grid,
@@ -648,8 +668,8 @@ th {
 }
 
 .fee-card {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
